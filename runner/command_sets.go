@@ -50,7 +50,7 @@ func (p Path) String() string {
 func (p Path) Equal(input Path) bool {
 	pAbs, _ := filepath.Abs(string(p))
 	inputAbs, _ := filepath.Abs(string(input))
-	return pAbs == inputAbs
+	return strings.Contains(inputAbs, pAbs)
 }
 
 type Paths []Path
